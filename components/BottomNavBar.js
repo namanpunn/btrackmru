@@ -3,7 +3,7 @@ import React from "react";
 const BottomNavBar = () => {
   return (
     <div>
-      <div className="fixed z-50 w-full h-16 max-w-lg bg-white border border-gray-200 rounded-full dark:bg-gray-700 dark:border-gray-600 -mt-3">
+      <div className="fixed z-50 w-full h-16 max-w-lg bg-white border border-gray-200 rounded-full dark:bg-gray-700 dark:border-gray-600 -mt-5">
         <div className="grid h-full max-w-lg grid-cols-5 mx-auto">
           <button
             data-tooltip-target="tooltip-home"
