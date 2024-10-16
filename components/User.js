@@ -1,9 +1,10 @@
 import React from "react";
 import Image from "next/image";
+import Link from 'next/link';
 
 const UserRoleCard = ({ role, imageSrc, altText }) => {
   return (
-    <div className="bg-white h-32 w-full rounded-2xl p-4 flex items-center gap-7 transition-transform transform hover:scale-105">
+    <Link href="/tracking" className="bg-white h-32 w-full rounded-2xl p-4 flex items-center gap-7 transition-transform transform hover:scale-105">
       <Image
         src={imageSrc}
         alt={altText}
@@ -14,7 +15,7 @@ const UserRoleCard = ({ role, imageSrc, altText }) => {
       />
       <p className="text-lg font-semibold text-gray-800">{role}</p>
       <img src="/images/next.png" alt="Next" className="w-5 ml-auto mr-2" />
-    </div>
+    </Link>
   );
 };
 

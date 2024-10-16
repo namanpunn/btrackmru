@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 const Home = () => {
   const router = useRouter();
   return (
-    <section className="flex flex-col items-center gap-7 h-screen p-6 mt-12">
+    <section className="flex flex-col items-center gap-7 h-screen p-6 mt-9">
       {/* Skip button */}
       <div className="flex justify-end w-full pt-5 p-3">
         <button
@@ -40,7 +40,7 @@ const Home = () => {
       {/* Pagination dots */}
       <div className="flex justify-center my-3">
         <span className="h-3 w-3 bg-gray-300 rounded-full mx-1"></span>
-        <span className="h-3 w-3 bg-blue-500 rounded-full mx-1"></span>
+        <span className="h-3 w-3 bg-[#FDD51A] rounded-full mx-1"></span>
         <span className="h-3 w-3 bg-gray-300 rounded-full mx-1"></span>
       </div>
 
@@ -48,7 +48,7 @@ const Home = () => {
       <button
         type="button"
         onClick={() => router.push("/user")}
-        className="bg-blue-600 text-white text-lg py-3 px-12 rounded-full mt-4 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition "
+        className="bg-[#FDD51A] border-black border-1 text-white text-lg py-3 px-12 rounded-full mt-4 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition "
       >
         Get Started
       </button>
