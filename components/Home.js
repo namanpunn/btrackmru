@@ -3,7 +3,7 @@ import Image from "next/image"
 const page = () => {
   return (
     <>
-      <section className="flex flex-col items-center justify-between h-screen p-6">
+      <section className="flex flex-col items-center gap-7 h-screen p-6 mt-16">
         {/* Skip button */}
         <div className="flex justify-end w-full pt-5 p-3">
           <p className="font-semibold">Skip</p>
