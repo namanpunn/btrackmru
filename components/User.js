@@ -21,17 +21,17 @@ const UserRoleCard = ({ role, imageSrc, altText }) => {
 const User = () => {
   return (
     <div className="bg-slate-100 min-h-screen flex flex-col">
-      <section className="flex bg-[#FDD51A] h-32 rounded-b-[42px] mb-8 justify-center items-center font-extrabold p-4">
+      <section className="flex bg-[#FDD51A] h-28 rounded-b-[42px] mb-8 justify-center items-center font-extrabold p-4">
         <div className="flex items-center justify-center mr-4">
           <Image
             src="/images/bus2.png"
             alt="School bus"
-            width={40}
-            height={40}
+            width={50}
+            height={50}
             priority
           />
         </div>
-        <div className="text-2xl text-gray-900">You are a?</div>
+        <div className="text-3xl text-gray-900">You are?</div>
       </section>
 
       <section className="flex flex-col items-center my-4 px-4 gap-4">
