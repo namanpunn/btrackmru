@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 const Home = () => {
   const router = useRouter();
   return (
-    <section className="flex flex-col items-center gap-7 h-screen p-6 mt-9">
+    <section className="flex flex-col items-center gap-7 h-screen p-6 mt-6">
       {/* Skip button */}
       <div className="flex justify-end w-full pt-5 p-3">
         <button
