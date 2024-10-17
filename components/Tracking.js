@@ -1,5 +1,5 @@
 import React from "react";
-import Bottomnavbar from  "./Bottomnavbar";
+import Navbar from "./Navbar";
 
 
 const Tracking = () => {
@@ -69,7 +69,7 @@ const Tracking = () => {
       </section>
 
       <section>
-        <Bottomnavbar/>
+        <Navbar/>
       </section>
     </div>
   );
