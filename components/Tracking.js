@@ -1,5 +1,5 @@
 import React from "react";
-import Bottomnavbar from  "./components/Bottomnavbar";
+import Bottomnavbar from  "./Bottomnavbar";
 
 
 const Tracking = () => {
