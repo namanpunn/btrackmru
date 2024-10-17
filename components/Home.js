@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 const Home = () => {
   const router = useRouter();
   return (
-    <section className="flex flex-col items-center gap-7 h-screen p-6 mt-1">
+    <section className="flex flex-col items-center gap-7 h-screen p-6">
       {/* Skip button */}
       <div className="flex justify-end w-full pt-5 p-3">
         <button
@@ -18,7 +18,7 @@ const Home = () => {
       {/* Image */}
       <div className="flex justify-center items-center my-6">
         <Image
-          src="/images/bus.jpg"
+          src="/images/busy.png"
           alt="School bus"
           width={350}
           height={300}
@@ -48,7 +48,7 @@ const Home = () => {
       <button
         type="button"
         onClick={() => router.push("/user")}
-        className="bg-[#FDD51A] border-black border-1 text-white text-lg py-3 px-12 rounded-full mt-4 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition "
+        className="bg-[#FDD51A] border-black border-1 text-white text-lg py-3 px-12 rounded-full mt-4 hover:bg-[#f7d74b] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition "
       >
         Get Started
       </button>
