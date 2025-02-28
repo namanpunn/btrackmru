@@ -1,57 +1,67 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { ArrowRight, ChevronRight } from "lucide-react";
 
 const Home = () => {
   const router = useRouter();
+  
   return (
-    <section className="flex flex-col items-center gap-7 h-screen p-6">
-      {/* Skip button */}
-      <div className="flex justify-end w-full pt-5 p-3">
+    <section className="flex flex-col min-h-screen bg-gradient-to-b from-white to-gray-50">
+      {/* Header with skip button */}
+      <header className="w-full px-6 py-5 flex justify-end">
         <button
-          className="font-semibold hover:text-blue-500 transition-colors"
+          onClick={() => router.push("/user")}
+          className="flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-gray-800 transition-colors px-3 py-1.5 rounded-full hover:bg-gray-100"
           aria-label="Skip introduction"
         >
-          Skip
+          Skip <ChevronRight size={16} />
         </button>
-      </div>
+      </header>
 
-      {/* Image */}
-      <div className="flex justify-center items-center my-6">
-        <Image
-          src="/images/busy.png"
-          alt="School bus"
-          width={350}
-          height={300}
-          layout="responsive"
-          priority
-        />
-      </div>
+      {/* Main content */}
+      <main className="flex-1 flex flex-col items-center justify-center px-6 pb-12">
+        {/* Image with subtle shadow and improved container */}
+        <div className="w-full max-w-md mb-10 relative">
+          <div className="absolute inset-0  opacity-10 rounded-3xl transform translate-y-4"></div>
+          <div className="relative  rounded-2xl p-6  overflow-hidden ">
+            <Image
+              src="/images/busy.png"
+              alt="School bus tracking system"
+              width={400}
+              height={300}
+              priority
+              className="w-full h-auto object-contain"
+            />
+          </div>
+        </div>
 
-      {/* Heading and description */}
-      <div className="text-center px-4">
-        <h1 className="text-xl font-bold text-gray-900">
-          We Provide School Bus GPS Tracking System
-        </h1>
-        <p className="text-gray-500 mt-2">
-          Track your child during travel in the school bus.
-        </p>
-      </div>
+        {/* Heading and description with improved typography */}
+        <div className="text-center max-w-md mb-12">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            School Bus GPS Tracking
+          </h1>
+          <p className="text-gray-600 text-lg">
+            Real-time monitoring to ensure your child's safe journey to and from school.
+          </p>
+        </div>
 
-      {/* Pagination dots */}
-      <div className="flex justify-center my-3">
-        <span className="h-3 w-3 bg-gray-300 rounded-full mx-1"></span>
-        <span className="h-3 w-3 bg-[#FDD51A] rounded-full mx-1"></span>
-        <span className="h-3 w-3 bg-gray-300 rounded-full mx-1"></span>
-      </div>
+        {/* Pagination dots with subtle animation */}
+        <div className="flex justify-center mb-12">
+          <span className="h-2.5 w-2.5 bg-gray-300 rounded-full mx-1.5 transition-all duration-300"></span>
+          <span className="h-2.5 w-8 bg-[#FDD51A] rounded-full mx-1.5 transition-all duration-300"></span>
+          <span className="h-2.5 w-2.5 bg-gray-300 rounded-full mx-1.5 transition-all duration-300"></span>
+        </div>
 
-      {/* Get Started button */}
-      <button
-        type="button"
-        onClick={() => router.push("/user")}
-        className="bg-[#FDD51A] border-black border-1 text-white text-lg py-3 px-12 rounded-full mt-4 hover:bg-[#f7d74b] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition "
-      >
-        Get Started
-      </button>
+        {/* Get Started button with refined animation */}
+        <button
+          type="button"
+          onClick={() => router.push("/user")}
+          className="group flex items-center gap-2 bg-[#FDD51A] text-gray-900 font-semibold text-lg py-4 px-10 rounded-full shadow-md hover:shadow-lg hover:bg-[#FFE04A] focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 transition-all transform hover:scale-105"
+        >
+          Get Started
+          <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+        </button>
+      </main>
     </section>
   );
 };
