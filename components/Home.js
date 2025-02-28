@@ -41,7 +41,7 @@ const Home = () => {
             School Bus GPS Tracking
           </h1>
           <p className="text-gray-600 text-lg">
-            Real-time monitoring to ensure your child's safe journey to and from school.
+            Real-time monitoring to ensure your child&apos;s safe journey to and from school.
           </p>
         </div>
 
