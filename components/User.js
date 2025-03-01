@@ -7,8 +7,8 @@ import { X } from "react-feather";
 
 const UserRoleCard = ({ role, imageSrc, altText, description }) => {
   return (
-    <Link
-      href="/tracking"
+    <div
+      
       className="bg-white w-full rounded-2xl p-4 flex items-center gap-5 transition-all hover:shadow-md hover:scale-102"
     >
       <div className="bg-gray-50 rounded-full p-2 flex items-center justify-center">
@@ -40,7 +40,7 @@ const UserRoleCard = ({ role, imageSrc, altText, description }) => {
           <polyline points="9 18 15 12 9 6"></polyline>
         </svg>
       </div>
-    </Link>
+    </div>
   );
 };
 
@@ -84,36 +84,44 @@ const User = () => {
           </p>
 
           <div className="space-y-4">
-            <UserRoleCard
-              role="Bus Driver"
-              imageSrc="/images/driver.gif"
-              altText="Bus Driver"
-              description="Track & manage your route"
-            />
+            <Link href="/developing">
+              <UserRoleCard
+                role="Bus Driver"
+                imageSrc="/images/driver.gif"
+                altText="Bus Driver"
+                description="Track & manage your route"
+              />
+            </Link>
             <div className="border-b border-gray-100"></div>
 
+            <Link href="/tracking">
             <UserRoleCard
               role="Student"
               imageSrc="/images/student.gif"
               altText="Student"
               description="Track your school bus"
             />
+            </Link>
             <div className="border-b border-gray-100"></div>
 
+            <Link href="/developing">
             <UserRoleCard
               role="Parent"
               imageSrc="/images/parent.gif"
               altText="Parent"
               description="Monitor your ward's bus"
             />
+            </Link>
             <div className="border-b border-gray-100"></div>
 
+            <Link href="/developing">
             <UserRoleCard
               role="Administrator"
               imageSrc="/images/administrator.gif"
               altText="Administrator"
               description="Manage the entire system"
             />
+            </Link>
           </div>
         </div>
 

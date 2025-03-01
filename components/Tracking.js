@@ -151,7 +151,7 @@ const Tracking = () => {
             <Phone size={16} className="text-gray-700" />
           </button>
           </a>
-          <a href="https://wa.me/+9193548559890" target="_blank">
+          <a href="https://wa.me/+919354855980" target="_blank">
           <button className="bg-white p-2 rounded-full shadow-sm hover:bg-gray-50 transition-colors duration-200">
             <img src="/images/whatsapp.png" alt="" className="w-4 h-4 flex justify-center items-center" />
           </button>
@@ -240,9 +240,9 @@ const Tracking = () => {
 
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-bold text-gray-800">Track Your Bus</h2>
-          <div className="flex items-center gap-1 bg-green-100 px-3 py-1 rounded-full">
-            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-            <span className="text-xs font-medium text-green-700">Live</span>
+          <div className="flex items-center gap-1 bg-red-100 px-3 py-1 rounded-full">
+            <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
+            <span className="text-xs font-medium text-red-700">connecting</span>
           </div>
         </div>
 

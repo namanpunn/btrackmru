@@ -9,7 +9,7 @@ const slides = [
     src: "/images/busy.png",
     alt: "Slide 1",
     title: "School Bus GPS Tracking",
-    description: "Real-time monitoring to ensure your child's safe journey.",
+    description: "Real-time monitoring to ensure your ward's safe journey.",
     width: "350",
     height: "350"
   },
