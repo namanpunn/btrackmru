@@ -132,7 +132,7 @@ const Tracking = () => {
         </Link>
         
         <div className="flex items-center ml-2">
-          <div className="bg-white rounded-full h-9 w-9 flex items-center justify-center shadow-sm overflow-hidden">
+          <div className="bg-white rounded-full h-7 w-7 flex items-center justify-center shadow-sm overflow-hidden">
             <img
               src="images/profile.gif"
               alt="Profile"
@@ -146,15 +146,19 @@ const Tracking = () => {
         </div>
 
         <div className="ml-auto flex gap-2">
+          <a href="tel:9354855980">
           <button className="bg-white p-2 rounded-full shadow-sm hover:bg-gray-50 transition-colors duration-200">
             <Phone size={16} className="text-gray-700" />
           </button>
+          </a>
+          <a href="https://wa.me/93548559890" target="_blank">
           <button className="bg-white p-2 rounded-full shadow-sm hover:bg-gray-50 transition-colors duration-200">
-            <MessageCircle size={16} className="text-gray-700" />
+            <img src="/images/whatsapp.png" alt="" className="w-4 h-4 flex justify-center items-center" />
           </button>
-          <button className="bg-white p-2 rounded-full shadow-sm hover:bg-gray-50 transition-colors duration-200">
+          </a>
+          {/* <button className="bg-white p-2 rounded-full shadow-sm hover:bg-gray-50 transition-colors duration-200">
             <MoreVertical size={16} className="text-gray-700" />
-          </button>
+          </button> */}
         </div>
       </header>
 
@@ -208,7 +212,7 @@ const Tracking = () => {
               }
             }}
           >
-            <Navigation size={18} className="text-gray-700" />
+            <img src="/images/currentlocation.png" alt="" className="w-4 h-4 flex justify-center items-center"/>
           </button>
         </div>
 

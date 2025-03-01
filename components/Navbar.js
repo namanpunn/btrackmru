@@ -19,7 +19,7 @@ const Navbar = () => {
             className="flex flex-col items-center justify-center p-2 rounded-full hover:bg-gray-50  transition-colors"
           >
             <Wallet size={20} className="text-gray-500" />
-            <span className="text-xs mt-1 text-gray-500">Routes</span>
+            <span className="text-xs mt-1 text-gray-500">Roles</span>
           </button>
 
           <div className="flex items-center justify-center">
