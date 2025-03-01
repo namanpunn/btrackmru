@@ -12,9 +12,9 @@ const Tracking = () => {
   const markersRef = useRef({});
 
   // Sample coordinates - replace these with your actual coordinates
-  const busLocation = [28.450104, 77.282833]; // Bus location [lat, lng]
-  const userLocation = [28.448104, 77.286833]; // User location [lat, lng]
-  const stopLocation = [28.452104, 77.278833]; // Stop location [lat, lng]
+  const busLocation = [28.9197, 77.1278]; // Bus location [lat, lng]
+  const userLocation = [28.9200, 77.1350]; // User location [lat, lng]
+  const stopLocation = [28.9150, 77.1360]; // Stop location [lat, lng]
   
   useEffect(() => {
     // Load Leaflet CSS
@@ -151,7 +151,7 @@ const Tracking = () => {
             <Phone size={16} className="text-gray-700" />
           </button>
           </a>
-          <a href="https://wa.me/93548559890" target="_blank">
+          <a href="https://wa.me/+9193548559890" target="_blank">
           <button className="bg-white p-2 rounded-full shadow-sm hover:bg-gray-50 transition-colors duration-200">
             <img src="/images/whatsapp.png" alt="" className="w-4 h-4 flex justify-center items-center" />
           </button>
@@ -190,13 +190,13 @@ const Tracking = () => {
             aria-label={isExpanded ? "Collapse map" : "Expand map"}
           >
             {isExpanded ? 
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="text-black  ">
                 <polyline points="4 14 10 14 10 20"></polyline>
                 <polyline points="20 10 14 10 14 4"></polyline>
                 <line x1="14" y1="10" x2="21" y2="3"></line>
                 <line x1="3" y1="21" x2="10" y2="14"></line>
               </svg> :
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="text-black">
                 <polyline points="15 3 21 3 21 9"></polyline>
                 <polyline points="9 21 3 21 3 15"></polyline>
                 <line x1="21" y1="3" x2="14" y2="10"></line>
