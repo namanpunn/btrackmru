@@ -304,7 +304,7 @@ const Tracking = () => {
         ></div>
 
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-lg font-bold text-gray-800">Track Your Ward's Bus</h2>
+          <h2 className="text-lg font-bold text-gray-800">Track Your Ward&apos;s Bus</h2>
           <div className="flex items-center gap-1 bg-red-100 px-3 py-1 rounded-full">
             <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
             <span className="text-xs font-medium text-red-700">connecting</span>
