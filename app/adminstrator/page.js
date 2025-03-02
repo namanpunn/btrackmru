@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import { Icon } from 'leaflet';
 import { ChevronLeft, Filter, RefreshCw, Navigation, List, Map, X } from 'lucide-react';
 
 // Mock data for demonstration
@@ -148,7 +147,7 @@ function Sidebar({ show, buses, filteredBuses, onSelectBus, onClose }) {
 // --- Map Updater Component ---
 function MapUpdater({ selectedBus, centerMap, zoom }) {
   const map = useMap();
-  
+
   useEffect(() => {
     if (selectedBus) {
       map.setView([selectedBus.lat, selectedBus.lng], 15);
@@ -156,7 +155,7 @@ function MapUpdater({ selectedBus, centerMap, zoom }) {
       map.setView([centerMap.lat, centerMap.lng], zoom);
     }
   }, [selectedBus, centerMap, zoom, map]);
-  
+
   return null;
 }
 
@@ -186,6 +185,19 @@ export default function AdminBusTracking() {
   const [searchQuery, setSearchQuery] = useState('');
   const [showSidebar, setShowSidebar] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
+  const [busIcon, setBusIcon] = useState(null);
+
+  // Create the bus icon on the client side
+  useEffect(() => {
+    const L = require('leaflet');
+    const icon = new L.Icon({
+      iconUrl: '/images/bus2.png', // Ensure this image exists in your public folder
+      iconSize: [32, 32],
+      iconAnchor: [16, 32],
+      popupAnchor: [0, -32],
+    });
+    setBusIcon(icon);
+  }, []);
 
   // Simulate bus movement every 3 seconds
   useEffect(() => {
@@ -208,14 +220,6 @@ export default function AdminBusTracking() {
       bus.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       bus.id.includes(searchQuery);
     return matchesStatus && matchesSearch;
-  });
-
-  // Use a larger bus icon for better visibility
-  const busIcon = new Icon({
-    iconUrl: '/images/bus2.png', // Ensure this image exists in your public folder
-    iconSize: [32, 32],
-    iconAnchor: [16, 32],
-    popupAnchor: [0, -32],
   });
 
   return (
@@ -259,20 +263,21 @@ export default function AdminBusTracking() {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          {filteredBuses.map(bus => (
-            <Marker
-              key={bus.id}
-              position={[bus.lat, bus.lng]}
-              icon={busIcon}
-              eventHandlers={{
-                click: () => setSelectedBus(bus),
-              }}
-            >
-              <Popup>
-                <BusPopup bus={bus} />
-              </Popup>
-            </Marker>
-          ))}
+          {busIcon &&
+            filteredBuses.map(bus => (
+              <Marker
+                key={bus.id}
+                position={[bus.lat, bus.lng]}
+                icon={busIcon}
+                eventHandlers={{
+                  click: () => setSelectedBus(bus),
+                }}
+              >
+                <Popup>
+                  <BusPopup bus={bus} />
+                </Popup>
+              </Marker>
+            ))}
           <MapUpdater selectedBus={selectedBus} centerMap={centerMap} zoom={zoom} />
         </MapContainer>
 
