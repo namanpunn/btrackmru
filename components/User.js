@@ -84,7 +84,7 @@ const User = () => {
           </p>
 
           <div className="space-y-4">
-            <Link href="/driver">
+            <Link href="/busdriver">
               <UserRoleCard
                 role="Bus Driver"
                 imageSrc="/images/driver.gif"
