@@ -3,7 +3,12 @@
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import 'leaflet/dist/leaflet.css';
-import L from 'leaflet';
+
+// Conditionally load Leaflet only on the client
+let L;
+if (typeof window !== 'undefined') {
+  L = require('leaflet');
+}
 
 // ----------------------
 // DYNAMIC IMPORTS (avoid SSR issues with Leaflet)
@@ -97,10 +102,11 @@ const studentStops = [
 // ----------------------
 // CUSTOM MARKER ICONS
 // ----------------------
-if (typeof window !== 'undefined') {
+if (typeof window !== 'undefined' && L) {
+  // Remove default icon URLs so our custom ones are used
   delete L.Icon.Default.prototype._getIconUrl;
   
-  // Base icon settings
+  // Base icon settings with a template literal for the color
   const createCustomIcon = (color) => {
     return new L.Icon({
       iconUrl: `https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-${color}.png`,
@@ -114,12 +120,12 @@ if (typeof window !== 'undefined') {
 
   // Define specific icons
   const blueIcon = createCustomIcon('blue');    // Default
-  const greenIcon = createCustomIcon('green');  // Completed stops
-  const redIcon = createCustomIcon('red');      // Next stop
-  const orangeIcon = createCustomIcon('orange');// Students
-  const greyIcon = createCustomIcon('grey');    // Upcoming stops
+  const greenIcon = createCustomIcon('green');    // Completed stops
+  const redIcon = createCustomIcon('red');        // Next stop
+  const orangeIcon = createCustomIcon('orange');  // Students
+  const greyIcon = createCustomIcon('grey');      // Upcoming stops
   
-  // Export for use in component
+  // Attach icons to L
   L.Icons = {
     blue: blueIcon,
     green: greenIcon,
@@ -131,7 +137,7 @@ if (typeof window !== 'undefined') {
 
 // Get icon based on stop status
 const getStopIcon = (status) => {
-  if (typeof window === 'undefined') return null;
+  if (typeof window === 'undefined' || !L) return null;
   
   switch (status) {
     case 'completed': return L.Icons.green;
@@ -285,7 +291,7 @@ export default function DriverPage() {
             />
             
             {/* Current location marker */}
-            <Marker position={currentLocation} icon={L.Icons?.blue}>
+            <Marker position={currentLocation} icon={L?.Icons?.blue}>
               <Popup>
                 <div className="font-semibold">Current Location</div>
                 <div className="text-xs text-gray-600">Shuttle #1</div>
@@ -311,7 +317,7 @@ export default function DriverPage() {
             
             {/* Student markers */}
             {studentStops.map((stop) => (
-              <Marker key={stop.id} position={stop.position} icon={L.Icons?.orange}>
+              <Marker key={stop.id} position={stop.position} icon={L?.Icons?.orange}>
                 <Popup>
                   <div className="font-semibold">{stop.name}</div>
                   <div className="text-xs text-gray-600">Pickup: {stop.pickup}</div>
