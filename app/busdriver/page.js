@@ -78,21 +78,21 @@ const routeStops = [
 const studentStops = [
   {
     id: 's1',
-    name: 'John Student',
+    name: 'Alok',
     position: [12.8226, 80.0423], // near Potheri Railway Station
     pickup: '7:55 AM',
     phone: '+91 9876543210'
   },
   {
     id: 's2',
-    name: 'Jane Student',
+    name: 'Shanvi',
     position: [12.8312, 80.0467], // near Estancia Township
     pickup: '7:50 AM',
     phone: '+91 9876543211'
   },
   {
     id: 's3',
-    name: 'Sam Student',
+    name: 'Sourabh',
     position: [12.8302, 80.0460], // near SRM Tech Park
     pickup: '7:52 AM',
     phone: '+91 9876543212'
