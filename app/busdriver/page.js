@@ -193,7 +193,7 @@ export default function DriverPage() {
             </svg>
           </div>
           <div>
-            <h1 className="text-lg font-bold text-black">Driver: John Doe</h1>
+            <h1 className="text-lg font-bold text-black">Driver: Ram Lal</h1>
             <div className="flex items-center">
               <span className="inline-block h-2 w-2 rounded-full bg-green-500 mr-2"></span>
               <p className="text-xs text-black">Active · Shuttle #1</p>
