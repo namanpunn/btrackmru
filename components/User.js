@@ -84,7 +84,7 @@ const User = () => {
           </p>
 
           <div className="space-y-4">
-            <Link href="/developing">
+            <Link href="/driver">
               <UserRoleCard
                 role="Bus Driver"
                 imageSrc="/images/driver.gif"
@@ -104,7 +104,7 @@ const User = () => {
             </Link>
             <div className="border-b border-gray-100"></div>
 
-            <Link href="/developing">
+            <Link href="/parents">
             <UserRoleCard
               role="Parent"
               imageSrc="/images/parent.gif"
@@ -114,7 +114,7 @@ const User = () => {
             </Link>
             <div className="border-b border-gray-100"></div>
 
-            <Link href="/developing">
+            <Link href="/adminstrator">
             <UserRoleCard
               role="Administrator"
               imageSrc="/images/administrator.gif"
