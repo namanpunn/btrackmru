@@ -208,7 +208,7 @@ function Sidebar({ show, buses, filteredBuses, onSelectBus, onClose }) {
         </p>
       </div>
       <div className="p-4 overflow-y-auto h-[calc(100vh-8rem)]">
-        <a href="/attendancePage">
+        
         <div className="space-y-3">
           {filteredBuses.map((bus) => (
             <div
@@ -252,7 +252,7 @@ function Sidebar({ show, buses, filteredBuses, onSelectBus, onClose }) {
             </div>
           ))}
         </div>
-        </a>
+        
       </div>
     </aside>
   );

@@ -12,9 +12,9 @@ const Tracking = () => {
   const markersRef = useRef({});
 
   // Sample coordinates - replace these with your actual coordinates
-  const busLocation = [28.9197, 77.1278]; // Bus location [lat, lng]
-  const userLocation = [28.9200, 77.1350]; // User location [lat, lng]
-  const stopLocation = [28.9150, 77.1360]; // Stop location [lat, lng]
+  const busLocation = [28.4356, 77.1040]; // Bus location [lat, lng]
+  const userLocation = [28.4336, 77.1036]; // User location [lat, lng]
+  const stopLocation = [28.4306, 77.10345]; // Stop location [lat, lng]
   
   useEffect(() => {
     // Load Leaflet CSS

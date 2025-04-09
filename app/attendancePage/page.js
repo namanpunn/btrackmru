@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 // Configure the API base URL - adjust to your ESP8266's IP address
-const API_BASE_URL = 'http://192.168.29.169/api';
+const API_BASE_URL = 'http://192.168.10.182/api';
 
 // Map of student IDs to names - defined at frontend
 const STUDENT_NAMES = {
